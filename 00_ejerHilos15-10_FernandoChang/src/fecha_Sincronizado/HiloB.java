@@ -1,5 +1,6 @@
 package fecha_Sincronizado;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -15,8 +16,10 @@ public class HiloB extends Thread  {
 		//divides 1000 convertir milisegundos en segundos 
 		//y le sumas 10. Esto establece un tiempo futuro
 		while(fechaAhora.getTime()/1000!=fechaFutura) {
+			SimpleDateFormat  sdf=new SimpleDateFormat("yy/MM/dd HH:mm:ss");
 			fechaAhora=new Date();
-			System.out.println(RED+"Ejecuta+ " +this.getName() +"fecha: "+LocalDateTime.now());
+			System.out.println(RED+"Ejecuta+ " +this.getName() +"fecha: "+sdf.format(fechaAhora));
+			//System.out.println(RED+"Ejecuta+ " +this.getName() +"fecha: "+LocalDateTime.now());
 			try {
 		        Thread.sleep(100); // Espera 100 ms antes de la siguiente iteración
 		    } catch (InterruptedException e) {
