@@ -1,4 +1,4 @@
-package Ejercicio2_Boletin;
+package Ejercicio3_clase;
 
 public class Daemon extends Thread {
 	
