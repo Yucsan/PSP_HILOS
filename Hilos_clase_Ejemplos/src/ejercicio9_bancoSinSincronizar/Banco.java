@@ -1,4 +1,4 @@
-package ejercicio09_bancoSinSincronizar;
+package ejercicio9_bancoSinSincronizar;
 
 /*clase que crea las cuentas*/
 public class Banco {

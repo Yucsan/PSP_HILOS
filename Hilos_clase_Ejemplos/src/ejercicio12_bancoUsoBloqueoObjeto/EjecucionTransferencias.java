@@ -1,4 +1,4 @@
-package ejercicio09_bancoSinSincronizar;
+package ejercicio12_bancoUsoBloqueoObjeto;
 
 public class EjecucionTransferencias implements Runnable {
     private Banco banco;
@@ -29,9 +29,8 @@ public class EjecucionTransferencias implements Runnable {
 				//el retardo se retarda en 0 y 10 milisegundos
 				Thread.sleep((int)(Math.random()*10));
 			
-		}
+			}
 		} catch (InterruptedException e) {
-			
 			e.printStackTrace();
 		}
 	}

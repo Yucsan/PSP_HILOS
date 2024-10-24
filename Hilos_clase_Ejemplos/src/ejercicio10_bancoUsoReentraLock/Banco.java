@@ -1,4 +1,4 @@
-package ejercicio10_banco_usoReentraLock;
+package ejercicio10_bancoUsoReentraLock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -50,7 +50,7 @@ public class Banco {
 		for(int i=0;i<cuentas.length;i++) {
 			cuentas[i]=2000.0;
 		}
-		cierreBanco=new ReentrantLock();
+		cierreBanco=new ReentrantLock(); //para que funcione esto en constructor
 	}
 
 	

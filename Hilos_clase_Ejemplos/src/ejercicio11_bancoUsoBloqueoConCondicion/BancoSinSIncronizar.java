@@ -1,4 +1,4 @@
-package ejercicio09_bancoSinSincronizar;
+package ejercicio11_bancoUsoBloqueoConCondicion;
 
 public class BancoSinSIncronizar {
 

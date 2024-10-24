@@ -1,4 +1,4 @@
-package ejercicio10_banco_usoReentraLock;
+package ejercicio10_bancoUsoReentraLock;
 
 public class BancoSinSIncronizar {
 
