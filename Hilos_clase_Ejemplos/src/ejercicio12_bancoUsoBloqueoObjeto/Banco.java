@@ -1,9 +1,5 @@
 package ejercicio12_bancoUsoBloqueoObjeto;
 
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 /*clase que crea las cuentas*/
 public class Banco {
 	private final Double[] cuentas;  //array donde se guarda el saldo de cada cuenta
