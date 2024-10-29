@@ -5,61 +5,37 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Lectura extends Thread {
-	private String nomFile;
-	private String palabra;
-	private int cuenta=0;
-	
-	public Lectura(String palabra, String nomFile) {
-		this.palabra=palabra;
-		this.nomFile=nomFile;
-	}
-	
-	public void run() {
-		String texto = "";
-		try {
-			// Apertura.
-			FileReader fr = new FileReader("./archivos7/"+nomFile+".txt");
-			BufferedReader br = new BufferedReader(fr);
-			// Operaciones.
-			while (br.ready()) {
-				texto = br.readLine();
-				if(texto.equals(palabra)) {
-					cuenta++;
-				}
-				
-			}
-			// Clausura.
-			br.close();
-			fr.close();
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	
+    private String nomFile;
+    private String palabra;
+    private int cuenta = 0;
 
-	
-	public int getCuenta() {
-		return this.cuenta;
-	}
+    public Lectura(String palabra, String nomFile) {
+        this.palabra = palabra;
+        this.nomFile = nomFile;
+    }
 
-	public void setCuenta(int cuenta) {
-		this.cuenta = cuenta;
-	}
+    @Override
+    public void run() {
+        try (FileReader fr = new FileReader("./archivos7/" + nomFile + ".txt");
+             BufferedReader br = new BufferedReader(fr)) {
 
-	public String getPalabra() {
-		return palabra;
-	}
+            String linea="";
+            while (br.ready()) {
+            	linea = br.readLine();
+                if (linea.contains(palabra)) { // Verificar si la línea contiene la palabra
+                    cuenta++;
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error leyendo el archivo: " + e.getMessage());
+        }
+    }
 
-	public void setPalabra(String palabra) {
-		this.palabra = palabra;
-	}
+    public int getCuenta() {
+        return this.cuenta;
+    }
 
-	public void muestraCuenta() {
-		System.out.println("la palabra aparece : "+this.palabra +" "+ cuenta +" veces");
-	}
-	
-	
-	
-	
-	
+    public String getPalabra() {
+        return palabra;
+    }
 }
