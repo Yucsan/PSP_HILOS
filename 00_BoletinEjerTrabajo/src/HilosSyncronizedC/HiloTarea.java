@@ -1,15 +1,15 @@
 
-package HilosSyncronizedB;
+package HilosSyncronizedC;
 
-public class Persona extends Thread {
+public class HiloTarea extends Thread {
 
 	private String nombre;
-	private Saludo saludo;
+	private Mensaje mensaje;
 	private boolean esHola;
 
-	public Persona(String nombre, Saludo saludo, boolean esHola) {
+	public HiloTarea(String nombre, Mensaje mensaje, boolean esHola) {
 		this.nombre = nombre;
-		this.saludo = saludo;
+		this.mensaje = mensaje;
 		this.esHola = esHola;
 	}
 
@@ -19,12 +19,12 @@ public class Persona extends Thread {
 		// verifico si es jefe
 		for(int i=0; i<10; i++) {			
 			if (esHola) 
-				saludo.saludoHola(nombre);
+				mensaje.saludoHola(nombre);
 			else 
-				saludo.saludoAdios(nombre);
+				mensaje.saludoAdios(nombre);
 			
 			try {
-				Thread.sleep(500);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

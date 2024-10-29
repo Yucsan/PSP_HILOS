@@ -1,9 +1,9 @@
-package HilosSyncronizedB;
+package HilosSyncronizedC;
 
-public class Saludo {
+public class Mensaje {
 	private boolean llegado;
 
-	public Saludo() {
+	public Mensaje() {
 		this.llegado = false;
 	}
 
@@ -14,7 +14,7 @@ public class Saludo {
 				wait();
 			}
 			System.out.println(" ADIOS ");
-			Thread.sleep(200);
+			Thread.sleep(3000);
 			
 		} catch (InterruptedException e) {
 			System.out.println(e.getMessage());
