@@ -16,7 +16,7 @@ public class Persona extends Thread {
 	@Override
 	public void run() {
 		//System.out.println(nombre + " llego."); con esto veo cual llega primero
-		// verifico si es jefe
+		// verifico si es Hola
 		for(int i=0; i<10; i++) {			
 			if (esHola) 
 				saludo.saludoHola(nombre);
@@ -24,7 +24,7 @@ public class Persona extends Thread {
 				saludo.saludoAdios(nombre);
 			
 			try {
-				Thread.sleep(500);
+				Thread.sleep(200);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

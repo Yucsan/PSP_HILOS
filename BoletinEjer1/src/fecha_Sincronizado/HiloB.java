@@ -12,7 +12,7 @@ public class HiloB extends Thread  {
 		
 		Date hoy=new Date();
 		Date fechaAhora=new Date();
-		long fechaFutura = (long)(hoy.getTime()/1000+10);
+		long fechaFutura = (long)(hoy.getTime()/1000+4);
 		//divides 1000 convertir milisegundos en segundos 
 		//y le sumas 10. Esto establece un tiempo futuro
 		while(fechaAhora.getTime()/1000!=fechaFutura) {
@@ -21,7 +21,7 @@ public class HiloB extends Thread  {
 			System.out.println(RED+"Ejecuta+ " +this.getName() +"fecha: "+sdf.format(fechaAhora));
 			//System.out.println(RED+"Ejecuta+ " +this.getName() +"fecha: "+LocalDateTime.now());
 			try {
-		        Thread.sleep(100); // Espera 100 ms antes de la siguiente iteración
+		        Thread.sleep(300); // Espera 100 ms antes de la siguiente iteración
 		    } catch (InterruptedException e) {
 		        e.printStackTrace();
 		    }

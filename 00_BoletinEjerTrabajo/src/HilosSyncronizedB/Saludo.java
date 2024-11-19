@@ -14,8 +14,7 @@ public class Saludo {
 				wait();
 			}
 			System.out.println(" ADIOS ");
-			Thread.sleep(200);
-			
+
 		} catch (InterruptedException e) {
 			System.out.println(e.getMessage());
 		}
